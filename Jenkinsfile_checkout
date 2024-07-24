@@ -21,10 +21,11 @@ pipeline {
                checkout([$class: 'GitSCM',
                         branches: [[name: 'dev']],
                         userRemoteConfigs: [[url: 'https://github.com/md-sajidkhan/itdefined-java.git',
-                        credentialsId: 'github_hp']]])checkout([$class: 'GitSCM',
-                        branches: [[name: 'dev']],
-                        userRemoteConfigs: [[url: 'https://github.com/md-sajidkhan/itdefined-java.git',
                         credentialsId: 'github_hp']]])
+                checkout([$class: 'GitSCM',
+                    branches: [[name: 'dev']],
+                    userRemoteConfigs: [[url: 'https://github.com/md-sajidkhan/itdefined-java.git',
+                    credentialsId: 'github_hp']]])
             }
         }
 
