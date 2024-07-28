@@ -17,5 +17,12 @@ pipeline{
                 mvn test'''
             }
         }
+
+        stage('Integration Testing'){
+            steps{
+                sh '''cd calculator_app
+                mvn integration-test'''
+            }
+        }
     }
 }
