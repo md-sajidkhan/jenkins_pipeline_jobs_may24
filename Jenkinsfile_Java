@@ -13,7 +13,7 @@ pipeline{
 
         stage('Unit Testing'){
             steps{
-                sh '''cd ./calculator
+                sh '''cd calculator_app
                 mvn test'''
             }
         }
