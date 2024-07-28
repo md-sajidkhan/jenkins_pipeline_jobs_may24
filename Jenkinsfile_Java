@@ -34,13 +34,11 @@ pipeline{
 
         stage('Deploy to tomcat'){
             steps{
-                echo "Deploying to tomcat"
-
-                deploy adapters: [tomcat9(credentialsId: 'tomcat_manager', url: 'http://43.204.35.30:8090', path: '')],
-                                        contextPath: '/calculator',
-                                        war: 'calculator_app/target/calculator.war'
-
-                echo "Successfully deployed"
+                script{
+                    deploy adapters: [tomcat9(credentialsId: 'tomcat_manager', url: 'http://43.204.35.30:8090', path: '')],
+                                            contextPath: '/calculator',
+                                            war: 'calculator_app/target/calculator.war'
+                }
             }
         }
     }
