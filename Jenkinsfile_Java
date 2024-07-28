@@ -11,9 +11,10 @@ pipeline{
             }
         }
 
-        stage('test'){
+        stage('Unit Testing'){
             steps{
-                sh 'ls -lrt'
+                sh '''cd ./calculator
+                mvn test'''
             }
         }
     }
