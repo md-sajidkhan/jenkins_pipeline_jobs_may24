@@ -33,7 +33,9 @@ pipeline{
         }
 
         stage('check files'){
-            sh 'ls -lrta'
+            steps{
+                sh 'ls -lrta'
+            }
         }
 
         stage('Deploy to tomcat'){
