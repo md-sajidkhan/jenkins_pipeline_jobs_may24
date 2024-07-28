@@ -40,13 +40,13 @@ pipeline {
             }
         }
 
-        stage('Check Files') {
-            steps {
-                dir('./calculator_app/') {
-                    sh 'tree'
-                }
-            }
-        }
+        // stage('Check Files') {
+        //     steps {
+        //         dir('./calculator_app/') {
+        //             sh 'tree'
+        //         }
+        //     }
+        // }
 
         stage('Deploy Tomcat10') {
             input {
