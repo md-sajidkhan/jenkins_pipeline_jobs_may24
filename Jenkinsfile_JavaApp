@@ -11,7 +11,7 @@ pipeline {
                 checkout([$class: 'GitSCM',
                         branches: [[name: 'main']],
                         userRemoteConfigs: [[url: 'https://github.com/harshaprakash100/java_app.git',
-                        credentialsId: 'github_hp']]])
+                        credentialsId: 'ubuntu_github']]])
             }
         }
 
@@ -58,7 +58,7 @@ pipeline {
             steps {
                 script {
                     if (CHOICES == 'yes') {
-                        deploy adapters: [tomcat9(credentialsId: 'tomcat_manager', url: 'http://3.110.27.147:8080', path: '')],
+                        deploy adapters: [tomcat9(credentialsId: 'tomcat_manager', url: 'http://43.204.35.30:8080/', path: '')],
                                         contextPath: '/calculator',
                                         war: 'calculator_app/target/calculator.war'
                     } else {
