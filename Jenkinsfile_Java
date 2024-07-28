@@ -24,5 +24,12 @@ pipeline{
                 mvn integration-test'''
             }
         }
+
+        stage('Load Testing'){
+            steps{
+                sh '''cd calculator_app
+                mvn clean verify'''
+            }
+        }
     }
 }
